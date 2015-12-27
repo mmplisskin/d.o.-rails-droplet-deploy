@@ -85,10 +85,10 @@ Trash the example project server.
 rm -rf /home/rails/rails_project/*
 ```
 
-Export the databse password to the bash profile. You may need to scroll up to when you first logged in to see the password listed under “postgres database credentials”:
+Export the databse password to the bash profile. You may need to scroll up to when you first logged in to see the password listed under “postgres database credentials” (you will also need your rails sftp password for sudo)
 
 ```
-echo "export APP_DATABASE_PASSWORD=example_rails_pg_user_password" >> /home/rails/.profile
+sudo echo "export APP_DATABASE_PASSWORD=example_rails_pg_user_password" >> /home/rails/.profile
 ```
 Make sure that the password has been succesfully exported-- you should see the password after running this command.
 ```
