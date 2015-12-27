@@ -145,7 +145,7 @@ echo "export SECRET_KEY_BASE=example.secret.token" >> /home/rails/.profile
 
 bundle install
 ```
-bundle install - -path vendor/bundle
+bundle install --path vendor/bundle
 ```
 
 Set up rails db
