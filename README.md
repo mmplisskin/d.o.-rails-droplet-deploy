@@ -27,8 +27,9 @@ ssh root@example_ip_here
 ```
 
 ##Swapfile Setup
-First lets make a swapfile to handle memory issues you can also see more in depth instructions [here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
+First lets make a swapfile to handle memory issues.
 This is not completly necessary at first but if you have memory issues and do not want to upgrade it may be a good temporary solution. You can paste the entire script below, here is a summary:
+
 
 
 * Make the swapfile
@@ -37,7 +38,7 @@ This is not completly necessary at first but if you have memory issues and do no
 * Make the swapfile persistent
 * Change the swappiness and cache
 * Make the changes persistent
-
+ you can also see more in depth instructions [here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
 
 ```
 sudo fallocate -l 4G /swapfile
