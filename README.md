@@ -31,12 +31,12 @@ First lets make a swapfile to handle memory issues you can also see more in dept
 This is not completly necessary at first but if you have memory issues and do not want to upgrade it may be a good temporary solution. You can paste the entire script below, here is a summary:
 
 
-make the swapfile
-change the swap permissions
-use the swapfile
-Make the swapfile permanent
-change the swappiness and cache
-make the changes persistent
+* Make the swapfile
+* Change the swap permissions
+* Use the swapfile
+* Make the swapfile persistent
+* Change the swappiness and cache
+* Make the changes persistent
 
 
 ```
