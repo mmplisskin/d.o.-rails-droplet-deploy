@@ -56,12 +56,11 @@ echo vm.vfs_cache_pressure=50 | sudo tee -a /etc/sysctl.conf
 ***
 Take note of the rails user password from the welcome banner/login screen.
 
-Run Updates, install important ruby dependencies that may be missing and git... This may take a while.
+install important ruby dependencies that may be missing and git... This may take a while.
 
 ```
-apt-get update
 apt-get install ruby-dev zlib1g-dev --yes
-apt-get install git -- yes
+apt-get install git --yes
 gem update
 ```
 
