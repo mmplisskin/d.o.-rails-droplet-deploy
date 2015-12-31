@@ -64,16 +64,16 @@ apt-get install git --yes
 gem update
 ```
 
-While updates are running you can open another shell instance and copy your ssh key to the rails user( you may need to scroll up to look for the password -- the credentials are listed as sftp)
+While updates are running you can open another shell instance and copy your private ssh key to the rails user( you may need to scroll up to look for the password -- the credentials are listed as sftp). This can also be a special deploy key for the droplet from github.
 
 ```
-cat ~/.ssh/id_rsa.pub | ssh rails@example_ip_here "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+rsync -az ~/.ssh/id_rsa  rails@104.236.208.238:/home/rails/.ssh/
 
 ```
 
 Once updates are complete in shell window one... 
 
-The droplet by default has a "rails" user and postgresss "rails" user. Give the rails user sudo privelages:
+The droplet by default has a "rails" user. Give the rails user sudo privelages:
 
 ```
 adduser rails sudo
@@ -123,35 +123,29 @@ remove the repo (you have moved it in the previous step)
 rm -rf example.project.folder.name.here
 ```
 
-cd into your project folder
+cd into the rails project folder
 
 ```
-cd example.project.folder.name.here
+cd rails_project
 ```
 
 ##Final Setup
-
-run rake secret to generate a secret token for verifying cookies:
-
-```
-rake secret
-```
-
-export this key to the bash profile:
-
-```
-echo "export SECRET_KEY_BASE=example.secret.token" >> /home/rails/.profile
-```
 
 bundle install
 ```
 bundle install --path vendor/bundle
 ```
 
+run rake secret to generate a secret token for verifying cookies and export it to the bash profile
+
+```
+echo "export SECRET_KEY_BASE=`rake secret`" >> /home/rails/.profile
+```
+
 Set up rails db
 
 ```
-RAILS_ENV=production rake db:create && rake db:migrate && rake db:seed
+  RAILS_ENV=production rake db:setup
 ```
 
 Precompile assets and clean
