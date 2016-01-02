@@ -116,7 +116,7 @@ move the files into the rails_project directory:
 rsync -a example.project.folder.name.here/ ./rails_project/
 ```
 
-remove the repo (you have moved it in the previous step)
+remove the repo (you have moved the contents in the previous step)
 
 
 ```
