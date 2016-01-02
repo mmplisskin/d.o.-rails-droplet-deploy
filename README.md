@@ -79,7 +79,7 @@ The droplet by default has a "rails" user. Give the rails user sudo privelages:
 adduser rails sudo
 ```
 
-Trash the example project server.
+Trash the example project app.
 
 ```
 rm -rf /home/rails/rails_project/*
